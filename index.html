@@ -38,6 +38,9 @@ nav a:hover{color:var(--ink)}
 .steps b{font-family:Philosopher,serif;font-size:32px;color:var(--ink);line-height:1}
 .steps span{font-size:14px}
 .steps small{display:block;color:var(--soft)}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.trust div{border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:14px;color:var(--soft)}
+.trust b{display:block;color:var(--ink);font-family:Philosopher,serif;font-size:19px}
 .build{display:grid;grid-template-columns:1fr 360px;gap:26px;margin-top:30px;align-items:start}
 .panel{border:1px solid var(--line);border-radius:10px;padding:6px 20px}
 .frow{padding:16px 0;border-bottom:1px solid var(--line)}
@@ -73,11 +76,11 @@ textarea{width:100%;min-height:64px;resize:vertical}
 .info p{margin:4px 0 0;color:var(--soft);font-size:14.5px}
 footer{background:var(--ink);color:rgba(255,255,255,.82);padding:32px 0;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
-@media(max-width:860px){nav{display:none}.steps{grid-template-columns:1fr}.steps div{border-right:0;border-bottom:1px solid var(--line)}.build{grid-template-columns:1fr}.htop{flex-direction:column-reverse;text-align:center;gap:18px}.hero p{margin:14px auto 0}.gem{width:150px;height:150px}.ph{width:190px;height:190px}.side{position:static}}
+@media(max-width:860px){nav{display:none}.steps{grid-template-columns:1fr}.steps div{border-right:0;border-bottom:1px solid var(--line)}.build{grid-template-columns:1fr}.trust{grid-template-columns:1fr}.htop{flex-direction:column-reverse;text-align:center;gap:18px}.hero p{margin:14px auto 0}.gem{width:150px;height:150px}.ph{width:190px;height:190px}.side{position:static}}
 </style>
 </head>
 <body>
-<div class="top">Lab grown diamonds &middot; Every stone made to order</div>
+<div class="top">Made-to-order lab grown diamonds &middot; IGI certified &middot; Free insured worldwide shipping</div>
 <header><div class="wrap">
 <a class="brand" href="#top">CLAIRE <span>LAB DIAMOND</span></a>
 <nav><a href="#build">Build your diamond</a><a href="#guide">4C guide</a></nav>
@@ -95,6 +98,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 </div>
 </section>
 
+<div class="trust"><div><b>IGI certificate</b>Included with every diamond</div><div><b>Free insured shipping</b>Worldwide delivery</div><div><b>Made to order</b>Cut to the exact choice you make</div></div>
+
 <section class="build" id="build">
 <div class="panel">
 <div class="frow"><h3>Shape</h3><div class="chips" id="fShape"></div></div>
@@ -102,7 +107,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <div class="frow"><h3>Color <small>D is the most colorless</small></h3><div class="chips" id="fColor"></div></div>
 <div class="frow"><h3>Clarity <small>FL is the cleanest</small></h3><div class="chips" id="fClarity"></div></div>
 <div class="frow"><h3>Cut</h3><div class="chips" id="fCut"></div></div>
-<div class="frow"><h3>Certificate</h3><div class="chips" id="fCert"></div></div>
 <div class="frow"><h3>Quantity</h3><input type="number" id="qty" min="1" max="999" step="1" value="1" aria-label="Quantity"></div>
 <div class="frow"><h3>Anything else? <small>optional</small></h3><textarea id="msg" placeholder="e.g. matching pair, exact measurements, needed by a date" aria-label="Notes"></textarea></div>
 </div>
@@ -129,7 +133,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 
 <script>
 var WA='919879809599';
-var OPT={Shape:['Round','Oval','Pear','Marquise','Emerald','Radiant','Cushion','Princess','Asscher','Heart'],Color:['D','E','F','G','H','I','J'],Clarity:['FL','IF','VVS1','VVS2','VS1','VS2','SI1','SI2'],Cut:['Ideal','Excellent','Very Good'],Cert:['IGI','GIA','No certificate']};
+var OPT={Shape:['Round','Oval','Pear','Marquise','Emerald','Radiant','Cushion','Princess','Asscher','Heart'],Color:['D','E','F','G','H','I','J'],Clarity:['FL','IF','VVS1','VVS2','VS1','VS2','SI1','SI2'],Cut:['Ideal','Excellent','Very Good']};
 var ICO={Round:'<circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5"/>',Oval:'<ellipse cx="12" cy="12" rx="7" ry="10"/><ellipse cx="12" cy="12" rx="3.6" ry="5.4"/>',Pear:'<path d="M12 2C16 8 19 12 19 15.5a7 7 0 0 1-14 0C5 12 8 8 12 2Z"/><path d="M12 8.5c2 3 3.4 5 3.4 7a3.4 3.4 0 0 1-6.8 0c0-2 1.4-4 3.4-7Z"/>',Marquise:'<path d="M12 1.5C17.5 7 17.5 17 12 22.5 6.5 17 6.5 7 12 1.5Z"/><path d="M12 6.5c2.6 3 2.6 8 0 11-2.6-3-2.6-8 0-11Z"/>',Emerald:'<path d="M8 2h8l3 3v14l-3 3H8l-3-3V5z"/><path d="M9.5 6h5l1.5 1.5v9L14.5 18h-5L8 16.500v-9z"/>',Radiant:'<path d="M7.500 3h9l2.500 2.500v13L16.500 21h-9L5 18.500v-13z"/><path d="M5 5.500 9 9m10-3.500L15 9M5 18.500 9 15m10 3.500L15 15M9 9h6v6H9z"/>',Cushion:'<rect x="3.5" y="3.5" width="17" height="17" rx="5.5"/><rect x="8" y="8" width="8" height="8" rx="2"/>',Princess:'<rect x="3.5" y="3.5" width="17" height="17"/><path d="M3.500 3.500 9 9m11.500-5.500L15 9M3.500 20.500 9 15m11.500 5.500L15 15M9 9h6v6H9z"/>',Asscher:'<path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"/><path d="M9.500 7h5L17 9.500v5L14.500 17h-5L7 14.500v-5z"/>',Heart:'<path d="M12 21C4 15 2.500 10.500 4.500 6.800 6.300 3.600 10.300 3.800 12 7c1.700-3.200 5.700-3.400 7.500-.2C21.500 10.500 20 15 12 21Z"/>'};
 var S={Shape:'Round',Carat:1,Color:'E',Clarity:'VVS2',Cut:'Excellent',Cert:'IGI'}, items=[];
 function $(i){return document.getElementById(i)}
@@ -143,11 +147,11 @@ function chips(key){
   });
 }
 function qty(){var q=parseInt($('qty').value,10);return q>0?Math.min(q,999):1}
-function line(d){return d.Carat.toFixed(2)+' ct '+d.Shape+' | Color '+d.Color+' | Clarity '+d.Clarity+' | Cut '+d.Cut+' | '+d.Cert+' | Qty '+d.Qty}
+function line(d){return d.Carat.toFixed(2)+' ct '+d.Shape+' | Color '+d.Color+' | Clarity '+d.Clarity+' | Cut '+d.Cut+' | IGI certified | Qty '+d.Qty}
 function now(){return {Shape:S.Shape,Carat:S.Carat,Color:S.Color,Clarity:S.Clarity,Cut:S.Cut,Cert:S.Cert,Qty:qty()}}
 function draw(){
   var sp=$('spec');sp.textContent='';
-  [['Shape',S.Shape],['Carat',S.Carat.toFixed(2)+' ct'],['Color',S.Color],['Clarity',S.Clarity],['Cut',S.Cut],['Certificate',S.Cert],['Quantity',String(qty())]].forEach(function(r){
+  [['Shape',S.Shape],['Carat',S.Carat.toFixed(2)+' ct'],['Color',S.Color],['Clarity',S.Clarity],['Cut',S.Cut],['Certificate','IGI (included)'],['Quantity',String(qty())]].forEach(function(r){
     var d=el('div');d.appendChild(el('span',null,r[0]));d.appendChild(el('b',null,r[1]));sp.appendChild(d);
   });
   var all=items.concat([now()]), t=['Hello Claire Lab Diamond, please send me the price for:'];
@@ -176,7 +180,7 @@ function setCarat(v,from){
   var c=document.createElementNS(NS,'circle');c.setAttribute('cx',110);c.setAttribute('cy',110);c.setAttribute('r',100);c.setAttribute('fill','none');c.setAttribute('stroke','#044b61');c.setAttribute('stroke-width','1.6');
   var s=document.getElementById('gem');s.appendChild(g);s.appendChild(c);
 })();
-['Shape','Color','Clarity','Cut','Cert'].forEach(chips);
+['Shape','Color','Clarity','Cut'].forEach(chips);
 $('cRange').oninput=function(){setCarat(this.value,'r')};
 $('cNum').oninput=function(){setCarat(this.value,'n')};
 $('cNum').onblur=function(){this.value=S.Carat.toFixed(2)};
