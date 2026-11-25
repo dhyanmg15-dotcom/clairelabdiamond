@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claire Lab Diamond | Made-to-Order Lab Grown Diamonds</title>
+<meta name="description" content="Made-to-order lab grown diamonds. Choose shape, carat, color, clarity and cut, then get your price on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#044b61;--soft:#6f6f6f;--line:#dfe7ea;--wa:#1f9d57;--txt:#474747;--tint:#f2f7f8}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Open Sans",system-ui,sans-serif;color:var(--txt);background:#fff;line-height:1.55}
+h1,h2,h3{font-family:Philosopher,Georgia,serif;font-weight:700;margin:0;color:var(--ink)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.top{background:var(--ink);color:#fff;font-weight:600;font-size:13px;text-align:center;padding:7px 12px;letter-spacing:.04em}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{font-family:Philosopher,serif;font-size:25px;font-weight:700;letter-spacing:.06em;text-decoration:none;color:var(--ink)}
+.brand span{font-weight:400}
+nav{display:flex;gap:22px;font-size:14px;letter-spacing:.05em;text-transform:uppercase}
+nav a{text-decoration:none}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:var(--ink);color:#fff;padding:12px 22px;font:600 14px "Open Sans",sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;text-decoration:none;border-radius:40px}
+.btn.wa{background:var(--wa);border-color:var(--wa)}
+.btn.ghost{background:#fff;color:var(--ink)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.hero{padding:44px 20px 32px;text-align:center;background:var(--tint);border-radius:14px;margin-top:20px}
+.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.1;color:#000}
+.hero p{color:var(--soft);max-width:640px;margin:14px 0 0;font-size:17px}
+.htop{display:flex;align-items:center;justify-content:center;gap:40px;text-align:left;max-width:940px;margin:0 auto}
+.ph{width:250px;height:250px;flex:none;object-fit:cover;border-radius:16px;box-shadow:0 12px 26px rgba(4,75,97,.25)}
+.gem{width:210px;height:210px;flex:none;filter:drop-shadow(0 10px 18px rgba(4,75,97,.18))}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);margin:30px auto 0;max-width:860px;border:1px solid var(--line);background:#fff;border-radius:10px;overflow:hidden}
+.steps div{padding:15px 14px;border-right:1px solid var(--line);text-align:left;display:flex;gap:12px;align-items:center}
+.steps div:last-child{border-right:0}
+.steps b{font-family:Philosopher,serif;font-size:32px;color:var(--ink);line-height:1}
+.steps span{font-size:14px}
+.steps small{display:block;color:var(--soft)}
+.build{display:grid;grid-template-columns:1fr 360px;gap:26px;margin-top:30px;align-items:start}
+.panel{border:1px solid var(--line);border-radius:10px;padding:6px 20px}
+.frow{padding:16px 0;border-bottom:1px solid var(--line)}
+.frow:last-child{border-bottom:0}
+.frow h3{font-size:20px;margin-bottom:10px}
+.frow h3 small{font:400 13px "Open Sans",sans-serif;color:var(--soft);margin-left:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;padding:8px 14px;font:400 14px "Open Sans",sans-serif;cursor:pointer;border-radius:999px;color:var(--ink);min-width:48px}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.shape{display:flex;flex-direction:column;align-items:center;gap:5px;border-radius:10px;min-width:82px;padding:10px 8px}
+.shape svg{width:40px;height:40px;fill:url(#dg);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round}
+.shape[aria-pressed=true] svg{stroke:#fff;fill:rgba(255,255,255,.2)}
+.carat{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.carat input[type=range]{flex:1;min-width:180px;accent-color:var(--ink)}
+input[type=number],textarea{font:400 15px "Open Sans",sans-serif;border:1px solid var(--line);padding:9px 10px;color:var(--ink);border-radius:6px}
+input[type=number]{width:96px}
+textarea{width:100%;min-height:64px;resize:vertical}
+.side{border:1px solid var(--line);border-radius:10px;padding:20px;position:sticky;top:84px;background:#fff}
+.side h2{font-size:24px}
+.spec{margin:14px 0;border-top:1px solid var(--line)}
+.spec div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.spec span{color:var(--soft)}
+.spec b{color:var(--ink);font-weight:600}
+.side .btn{width:100%;margin-top:8px}
+.note{font-size:13px;color:var(--soft);margin-top:10px}
+.list{margin-top:16px}
+.item{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;background:var(--tint);border-radius:8px;padding:9px 11px;margin-top:8px;font-size:13.5px}
+.item button{border:0;background:none;color:var(--ink);cursor:pointer;font-size:18px;line-height:1;padding:0 2px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:56px 0}
+.info div{border-top:2px solid var(--ink);padding-top:12px}
+.info h3{font-size:22px}
+.info p{margin:4px 0 0;color:var(--soft);font-size:14.5px}
+footer{background:var(--ink);color:rgba(255,255,255,.82);padding:32px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+@media(max-width:860px){nav{display:none}.steps{grid-template-columns:1fr}.steps div{border-right:0;border-bottom:1px solid var(--line)}.build{grid-template-columns:1fr}.htop{flex-direction:column-reverse;text-align:center;gap:18px}.hero p{margin:14px auto 0}.gem{width:150px;height:150px}.ph{width:190px;height:190px}.side{position:static}}
+</style>
+</head>
+<body>
+<div class="top">Lab grown diamonds &middot; Every stone made to order</div>
+<header><div class="wrap">
+<a class="brand" href="#top">CLAIRE <span>LAB DIAMOND</span></a>
+<nav><a href="#build">Build your diamond</a><a href="#guide">4C guide</a></nav>
+<a class="btn wa" id="waTop" target="_blank" rel="noopener">WhatsApp</a>
+</div></header>
+
+<main class="wrap" id="top">
+<section class="hero">
+<div class="htop"><div><h1>Your lab grown diamond, made to order</h1>
+<p>Tell us the shape, carat, color, clarity and cut you want. We send you the price on WhatsApp and make the diamond for you.</p></div><svg class="gem" id="gem" viewBox="0 0 220 220" role="img" aria-label="Round brilliant diamond illustration"><defs><radialGradient id="tb" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#bfdde5"/></radialGradient><linearGradient id="dg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#bcdbe4"/></linearGradient></defs></svg><img class="ph" alt="Diamond" hidden src="https://images.unsplash.com/photo-1677249490921-3246e81f19e3?fm=jpg&q=70&w=700&auto=format&fit=crop" onload="this.hidden=false;this.previousElementSibling.style.display='none'" onerror="this.remove()"></div>
+<div class="steps">
+<div><b>1</b><span>Choose your diamond<small>Shape, carat and quality</small></span></div>
+<div><b>2</b><span>Get your price<small>Sent to you on WhatsApp</small></span></div>
+<div><b>3</b><span>We make it<small>Made to your order</small></span></div>
+</div>
+</section>
+
+<section class="build" id="build">
+<div class="panel">
+<div class="frow"><h3>Shape</h3><div class="chips" id="fShape"></div></div>
+<div class="frow"><h3>Carat <small>0.30 to 10.00 ct</small></h3><div class="carat"><input type="range" id="cRange" min="0.3" max="10" step="0.05" value="1" aria-label="Carat slider"><input type="number" id="cNum" min="0.3" max="10" step="0.01" value="1.00" aria-label="Carat"> <span>ct</span></div></div>
+<div class="frow"><h3>Color <small>D is the most colorless</small></h3><div class="chips" id="fColor"></div></div>
+<div class="frow"><h3>Clarity <small>FL is the cleanest</small></h3><div class="chips" id="fClarity"></div></div>
+<div class="frow"><h3>Cut</h3><div class="chips" id="fCut"></div></div>
+<div class="frow"><h3>Certificate</h3><div class="chips" id="fCert"></div></div>
+<div class="frow"><h3>Quantity</h3><input type="number" id="qty" min="1" max="999" step="1" value="1" aria-label="Quantity"></div>
+<div class="frow"><h3>Anything else? <small>optional</small></h3><textarea id="msg" placeholder="e.g. matching pair, exact measurements, needed by a date" aria-label="Notes"></textarea></div>
+</div>
+
+<aside class="side">
+<h2>Your diamond</h2>
+<div class="spec" id="spec"></div>
+<a class="btn wa" id="send" target="_blank" rel="noopener">Get price on WhatsApp</a>
+<button class="btn ghost" id="add" type="button">Add another diamond</button>
+<div class="note">No payment on this site. We reply on WhatsApp with the price and confirm every detail before making your diamond.</div>
+<div class="list" id="list"></div>
+</aside>
+</section>
+
+<section class="info" id="guide">
+<div><h3>Carat</h3><p>The weight of the diamond. A higher carat means a larger stone.</p></div>
+<div><h3>Color</h3><p>Graded from D (colorless) down the alphabet. D, E and F look icy white.</p></div>
+<div><h3>Clarity</h3><p>How free the stone is from marks. FL and IF are the cleanest; VS and SI show small marks under magnification.</p></div>
+<div><h3>Cut</h3><p>How well the facets are shaped and polished. A better cut gives more sparkle.</p></div>
+</section>
+</main>
+
+<footer><div class="wrap"><div><b>CLAIRE LAB DIAMOND</b><br>Lab grown diamonds, made to order.</div><div style="font-size:12px;opacity:.75">Banner image: Stanislav Rozhkov / Unsplash</div><div>WhatsApp: <a id="waFoot" target="_blank" rel="noopener">+91 98798 09599</a></div></div></footer>
+
+<script>
+var WA='919879809599';
+var OPT={Shape:['Round','Oval','Pear','Marquise','Emerald','Radiant','Cushion','Princess','Asscher','Heart'],Color:['D','E','F','G','H','I','J'],Clarity:['FL','IF','VVS1','VVS2','VS1','VS2','SI1','SI2'],Cut:['Ideal','Excellent','Very Good'],Cert:['IGI','GIA','No certificate']};
+var ICO={Round:'<circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5"/>',Oval:'<ellipse cx="12" cy="12" rx="7" ry="10"/><ellipse cx="12" cy="12" rx="3.6" ry="5.4"/>',Pear:'<path d="M12 2C16 8 19 12 19 15.5a7 7 0 0 1-14 0C5 12 8 8 12 2Z"/><path d="M12 8.5c2 3 3.4 5 3.4 7a3.4 3.4 0 0 1-6.8 0c0-2 1.4-4 3.4-7Z"/>',Marquise:'<path d="M12 1.5C17.5 7 17.5 17 12 22.5 6.5 17 6.5 7 12 1.5Z"/><path d="M12 6.5c2.6 3 2.6 8 0 11-2.6-3-2.6-8 0-11Z"/>',Emerald:'<path d="M8 2h8l3 3v14l-3 3H8l-3-3V5z"/><path d="M9.5 6h5l1.5 1.5v9L14.5 18h-5L8 16.500v-9z"/>',Radiant:'<path d="M7.500 3h9l2.500 2.500v13L16.500 21h-9L5 18.500v-13z"/><path d="M5 5.500 9 9m10-3.500L15 9M5 18.500 9 15m10 3.500L15 15M9 9h6v6H9z"/>',Cushion:'<rect x="3.5" y="3.5" width="17" height="17" rx="5.5"/><rect x="8" y="8" width="8" height="8" rx="2"/>',Princess:'<rect x="3.5" y="3.5" width="17" height="17"/><path d="M3.500 3.500 9 9m11.500-5.500L15 9M3.500 20.500 9 15m11.500 5.500L15 15M9 9h6v6H9z"/>',Asscher:'<path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"/><path d="M9.500 7h5L17 9.500v5L14.500 17h-5L7 14.500v-5z"/>',Heart:'<path d="M12 21C4 15 2.500 10.500 4.500 6.800 6.300 3.600 10.300 3.800 12 7c1.700-3.200 5.700-3.400 7.500-.2C21.500 10.500 20 15 12 21Z"/>'};
+var S={Shape:'Round',Carat:1,Color:'E',Clarity:'VVS2',Cut:'Excellent',Cert:'IGI'}, items=[];
+function $(i){return document.getElementById(i)}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function wa(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)}
+function chips(key){
+  var box=$('f'+key);box.textContent='';
+  OPT[key].forEach(function(v){
+    var b=el('button','chip',key==='Shape'?null:v);b.type='button';if(key==='Shape'){b.className='chip shape';b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICO[v]+'</svg>';b.appendChild(el('span',null,v))}b.setAttribute('aria-pressed',String(S[key]===v));
+    b.onclick=function(){S[key]=v;chips(key);draw()};box.appendChild(b);
+  });
+}
+function qty(){var q=parseInt($('qty').value,10);return q>0?Math.min(q,999):1}
+function line(d){return d.Carat.toFixed(2)+' ct '+d.Shape+' | Color '+d.Color+' | Clarity '+d.Clarity+' | Cut '+d.Cut+' | '+d.Cert+' | Qty '+d.Qty}
+function now(){return {Shape:S.Shape,Carat:S.Carat,Color:S.Color,Clarity:S.Clarity,Cut:S.Cut,Cert:S.Cert,Qty:qty()}}
+function draw(){
+  var sp=$('spec');sp.textContent='';
+  [['Shape',S.Shape],['Carat',S.Carat.toFixed(2)+' ct'],['Color',S.Color],['Clarity',S.Clarity],['Cut',S.Cut],['Certificate',S.Cert],['Quantity',String(qty())]].forEach(function(r){
+    var d=el('div');d.appendChild(el('span',null,r[0]));d.appendChild(el('b',null,r[1]));sp.appendChild(d);
+  });
+  var all=items.concat([now()]), t=['Hello Claire Lab Diamond, please send me the price for:'];
+  all.forEach(function(d,i){t.push((all.length>1?(i+1)+') ':'')+line(d))});
+  var m=$('msg').value.trim();if(m)t.push('Notes: '+m);
+  $('send').href=wa(t.join('\n'));
+  $('send').textContent=all.length>1?'Get price for '+all.length+' diamonds':'Get price on WhatsApp';
+  var L=$('list');L.textContent='';
+  items.forEach(function(d,i){
+    var r=el('div','item');r.appendChild(el('span',null,line(d)));
+    var x=el('button',null,'×');x.type='button';x.setAttribute('aria-label','Remove');x.onclick=function(){items.splice(i,1);draw()};r.appendChild(x);L.appendChild(r);
+  });
+}
+function setCarat(v,from){
+  v=parseFloat(v);if(isNaN(v))return;v=Math.max(0.3,Math.min(10,v));S.Carat=Math.round(v*100)/100;
+  if(from!=='r')$('cRange').value=S.Carat;if(from!=='n')$('cNum').value=S.Carat.toFixed(2);draw();
+}
+(function(){
+  var NS='http://www.w3.org/2000/svg',g=document.createElementNS(NS,'g'),PAL=['#ffffff','#e3f1f5','#b5d7e0','#f3fafc','#7fb5c4','#cfe6ec','#9ac7d3','#e9f5f8'],n=0;
+  function pt(a,r){a=(a-90)*Math.PI/180;return (110+r*Math.cos(a)).toFixed(1)+','+(110+r*Math.sin(a)).toFixed(1)}
+  function poly(ps,f){var p=document.createElementNS(NS,'polygon');p.setAttribute('points',ps.join(' '));p.setAttribute('fill',f||PAL[(n++*3)%8]);g.appendChild(p)}
+  g.setAttribute('stroke','#044b61');g.setAttribute('stroke-width','.7');g.setAttribute('stroke-linejoin','round');
+  var T=[],B=[],G=[],i;for(i=0;i<8;i++){T.push(pt(i*45+22.5,46));B.push(pt(i*45,70))}for(i=0;i<16;i++)G.push(pt(i*22.5,100));
+  poly(T,'url(#tb)');
+  for(i=0;i<8;i++){var p=(i+7)%8,q=(i+1)%8;poly([T[p],B[i],T[i]]);poly([B[i],G[(2*i+15)%16],G[2*i]]);poly([B[i],G[2*i],G[2*i+1]]);poly([T[p],B[i],G[(2*i+15)%16]]);poly([T[i],B[i],G[2*i+1]]);poly([T[i],G[2*i+1],B[q]]);poly([T[p],G[(2*i+15)%16],B[p]])}
+  var c=document.createElementNS(NS,'circle');c.setAttribute('cx',110);c.setAttribute('cy',110);c.setAttribute('r',100);c.setAttribute('fill','none');c.setAttribute('stroke','#044b61');c.setAttribute('stroke-width','1.6');
+  var s=document.getElementById('gem');s.appendChild(g);s.appendChild(c);
+})();
+['Shape','Color','Clarity','Cut','Cert'].forEach(chips);
+$('cRange').oninput=function(){setCarat(this.value,'r')};
+$('cNum').oninput=function(){setCarat(this.value,'n')};
+$('cNum').onblur=function(){this.value=S.Carat.toFixed(2)};
+$('qty').oninput=draw;$('msg').oninput=draw;
+$('add').onclick=function(){if(items.length<20){items.push(now());$('qty').value=1;draw()}};
+$('waTop').href=$('waFoot').href=wa('Hello Claire Lab Diamond, I have a question.');
+draw();
+</script>
+</body>
+</html>
